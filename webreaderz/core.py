@@ -1,12 +1,11 @@
+""" 简单的解析工具 """
 from lxml import html
-# 使用lxml解析HTML内容
-tree = html.fromstring(html_content)
-
-
 from bs4 import BeautifulSoup
 
-soup = BeautifulSoup(html_content, 'html.parser')
-print(soup.prettify())  # 打印格式化的HTML内容
+class HtmlXPathTree():
+    def __init__(self,html_content:str) -> None:
+        self.tree = html.fromstring(html_content)
+        self.soup = BeautifulSoup(html_content, 'html.parser')
 
-tree.xpath('//*[@id="root"]/section/section/section/main/section/div[4]/div/div/div/div[1]/div/table/tbody/tr')[1].xpath("td[4]/div/div")[0].text
-
+    def xpath(self,xpath_word:str)->str:
+        return self.tree.xpath(xpath_word)

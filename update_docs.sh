@@ -1,2 +1,5 @@
-cp -r ../obsidian/工作/工程系统级设计/能力级别/webReader能力/docs ~/GitHub/WebReaderZ/
-cp ../obsidian/工作/工程系统级设计/能力级别/webReader能力/README.md ~/GitHub/WebReaderZ/
+rm -rf docs/
+project=webReader能力
+github_repo=$(basename "$(pwd)")
+cp -r ../obsidian/工作/工程系统级设计/能力级别/$project/docs ~/GitHub/$github_repo/
+cp ../obsidian/工作/工程系统级设计/能力级别/$project/README.md ~/GitHub/$github_repo/
